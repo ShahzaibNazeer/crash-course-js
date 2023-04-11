@@ -5,99 +5,142 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CRASH COUSRE</title>
+    <title>ASSIGNMENT</title>
 </head>
 
 <body>
-    <H1>JAVASCRIPT CRASH COURSE ASSIGNMENT CHECK CONSOLE</H1>
+
+    <button onclick="addParagraph('this is a new paragraph')">
+        paragraph
+    </button>
+    <button onclick="addingList()">
+        add list
+    </button>
+    <ul id="new">
+        <li>apple</li>
+    </ul>
+    <button onclick="func()" id="bg">
+        change background colour
+    </button>
     <script>
-        /*1. Write a JavaScript program that accepts two numbers in two prompts and
-        displays the larger one in the console.*/
-        // let a = +prompt('write first number');
-        // let b = +prompt('write second number');
-        // if (a > b) { console.log(a) }
-        // else if (a < b) { console.log(b) }
-        // else {console.log( 'these are equals') };
-
-        /* 2. Write a JavaScript conditional statement to find the sign of a number. Display an alert box with the specified sign.
-        Sample: 3
-        Output : The sign is +
-        Sample: -5
-        Output : The sign is -*/
-
-        // let userNum = +prompt(`enter your number`);
-        // if(userNum<0){alert(`the sign is -`);}
-        // else{alert(`the sign is +`);};
-
-        /*3. Write a JavaScript program that accepts five numbers in five prompts and
-        displays the larger one in the console.*/
-
-        // const first = +prompt(`WRITE FIRST NUMBER`);
-        // const second = +prompt(`WRITE SECOND NUMBER`);
-        // const third = +prompt(`WRITE THIRD NUMBER`);
-        // const fourth = +prompt(`WRITE FOURTH NUMBER`);
-        // const fifth = +prompt(`WRITE FIFTH NUMBER`);
-
-        // if (first > second && first > third && first > fourth && first > fifth) { console.log(first) }
-        // else if (second > first && second > third && second > fourth && second > fifth) { console.log(second) }
-        // else if (third > second && third > first && third > fourth && third > fifth) { console.log(third) }
-        // else if (fourth > second && fourth > third && fourth > first && fourth > fifth) { console.log(fourth) }
-        // else if (fifth > second && fifth > third && fifth > first && fifth > fourth) { console.log(fifth) }
-        // else { console.log(0) };
-
-        /*4 Write a JavaScript for loop that will iterate from 0 to 15. For each iteration, it
-         will check if the current number is odd or even, and display a message to the
-         screen.
-         Sample Output :
-         "0 is even"
-         "1 is odd"
-         "2 is even"*/
-
-        // for (i = 0; i <= 15; i++) {
-        //     if (i % 2 == 0 ){console.log(`${i} is even`)}
-        //     else(console.log(`${i} is odd`))
-        // }
-
-        /* 5. Write a JavaScript program which computes the average marks of the
-         following students Then, this average is used to determine the corresponding grade*/
-
-        // const userNum=+prompt(`enter your number`);
-        // const totalMarks=100;
-        // if(userNum >= 90 && userNum<=100){console.log('A')}
-        // else if(userNum >= 80 && userNum<=90){console.log('B')}
-        // else if(userNum >= 70 && userNum<=80){console.log('C')}
-        // else if(userNum >= 60 && userNum<=70){console.log('D')}
-        // else if(userNum >= 0 && userNum<=60){console.log('F')}
-        // else(alert(`ENTER VALID NUM`));
-
-        /*6. Write a JavaScript program which iterates the integers from 1 to 100. But for
-        multiples of three print "Fizz" instead of the number and for the multiples of five
-        print "Buzz". For numbers which are multiples of both three and five print
-        "FizzBuzz".*/
-
-        // for (i = 0; i <= 100; i++) {
-        //      if (i % 3 == 0 && i % 5 == 0) { console.log('FizzBuzz') }
-        //     else if (i % 3 == 0) { console.log('fizz') }
-        //     else if (i % 5 == 0) { console.log('buzz') }
-        //     else (console.log(i))
-        // }
-
-        /*7. Write a JavaScript program to construct the following pattern, using a nested
-        for loop.
-        *
-        * *
-        * * *
-        * * * *
-        * * * * * */
-        // for (let i = 0; i <= 5; i++) {
-        //     let a='. ';
-        //     for (let b = 0; b <= i; b++) {
-        //     a += ' *' }
-        //     console.log(a)
-        // }
-
-
-    </script>
+        // 1. Write a function that creates a closure and returns a function that can add
+        // a specific number to any number passed to it. For example, if the closure is
+        // created with 5, the returned function should add 5 to any number passed
+        // to it.
+        
+        function addition() {
+          alert ('QUESTION NO 01')
+             let number1= +prompt('enter first number');
+            function add(){
+             let number2= +prompt('enter second number');
+            return number1 + number2 }
+            return add;
+        
+        }
+        let outer = addition();
+        console.log(outer());
+        
+        // 2. Write a recursive function that searches an array for a specific value. The
+        // function should return true if the value is found, and false if it is not. You
+        // can assume that the array is not nested.
+        alert ('QUESTION NO 02')
+        let months = ['january', 'february', 'march', 'april', 'may', 'june', 'july', 'august', 'september', 'october', 'november', 'december'];
+        let userInput =prompt('GIVE A MONTH NAME to check correct spelling');
+        console.log(finder(months,userInput));
+        function finder(months,userInput )
+        {
+            if      (months.length === 0) { return false}
+            else if (months[0] === userInput) { return true}
+            else    { return finder(months.slice(1),userInput)}
+        };
+        
+        //3 Write a function that adds a new paragraph element to the bottom of an
+        // HTML document. The function should take a string argument that will be
+        // used as the text content of the new paragraph element.
+        alert('QUESTION NO 03')
+        function addParagraph(text) {
+          const newParagraph = document.createElement('p');
+          newParagraph.textContent = text;
+          const body = document.querySelector('body');
+          body.append(newParagraph);
+        }
+        
+        // 4. Write a function that adds a new list item to an unordered list in an HTML
+        // document. The function should take a string argument that will be used as
+        // the text content of the new list item.
+        
+        alert('QUESTION NO 04')
+        function addingList() {
+          let newItem = document.getElementById('new');
+          let newlist = document.createElement('li');
+          newlist.textContent = prompt('enter a value to add in list');
+          newItem.appendChild(newlist);
+        }
+        
+        // 5. Write a function that changes the background color of an HTML element.
+        // The function should take two arguments: the first argument is a reference
+        // to the HTML element, and the second argument is a string representing
+        // the new background color.
+        
+        alert('QUESTION NO 05')
+        function func(){
+        let background=document.getElementById('bg');
+        let newColor = ('#' + Math.round(Math.random()*10000))
+        background.style.backgroundColor=newColor;
+        
+        }
+        
+        //6 Write a function that saves an object to localStorage. The function should
+        // take two arguments: the first argument is a string representing the key to
+        // use for storing the object, and the second argument is the object to store.
+        
+        alert('QUESTION NO 06')
+        let obj1 = {
+            name: prompt('enter you name'),
+            fname: prompt('enter your father name ')
+        }
+        let mainName1 = 'example';
+        function storing(Main,obj) {
+            let stringify = JSON.stringify(obj);
+            localStorage.setItem(Main, stringify);
+        }
+        storing(mainName,obj);
+        
+        // 7. Write a function that retrieves an object from localStorage. The function
+        // should take one argument, which is a string representing the key used to
+        // store the object. The function should return the object
+        
+        alert('QUESTION NO 07')
+        let obj2 = {
+            name: prompt('enter you name'),
+            fname: prompt('enter your father name ')
+        }
+        let getting2=localStorage.getItem('example')
+        let mainName2 = getting?JSON.parse(getting):[];
+        function storing(Main,obj) {
+            console.log(obj);
+        }
+        storing(mainName,obj);
+        
+        // 8. Write a function that takes an object and saves each property to
+        // localStorage using the property name as the key and the property value as
+        // the value. The function should also retrieve the object from localStorage
+        // and return it as a new object
+        
+        alert('QUESTION NO 08')
+        let obj = {
+          name: prompt('enter you name'),
+          fname: prompt('enter your father name ')
+        }
+        let getting=localStorage.getItem('example')
+        let mainName = getting?JSON.parse(getting):[];
+        function storing(Main,obj) {
+          let stringify = JSON.stringify(obj);
+          localStorage.setItem(Main, stringify);
+          console.log(obj);
+        }
+        storing(mainName,obj);
+        </script>
 </body>
 
 </html>
