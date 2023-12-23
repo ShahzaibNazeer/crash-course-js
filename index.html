@@ -3,144 +3,76 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ASSIGNMENT</title>
+    <title>assignment</title>
 </head>
 
 <body>
-
-    <button onclick="addParagraph('this is a new paragraph')">
-        paragraph
-    </button>
-    <button onclick="addingList()">
-        add list
-    </button>
-    <ul id="new">
-        <li>apple</li>
+    <p> <b>Date </b>:<u>September 14th, 2022</u>
+        <hr>
+    <h1> Content Writing Basics</h1>
+    Before even choosing the topic to write about, it's essential to do the prep work.
+    <ul>
+        <li>Research</li>
+        <ol>
+            <li>Business Goals</li>
+            <li> Buyer Persona</li>
+            <li> Search Intent</li>
+            <li> Keyword Research and SEO</li>
+            <li> Content Strategy</li>
+            <li> Topic Research
+        </ol>
+        <li>Planning</li>
+        <li> Writing</li>
     </ul>
-    <button onclick="func()" id="bg">
-        change background colour
-    </button>
-    <script>
-        // 1. Write a function that creates a closure and returns a function that can add
-        // a specific number to any number passed to it. For example, if the closure is
-        // created with 5, the returned function should add 5 to any number passed
-        // to it.
-        
-        function addition() {
-          alert ('QUESTION NO 01')
-             let number1= +prompt('enter first number');
-            function add(){
-             let number2= +prompt('enter second number');
-            return number1 + number2 }
-            return add;
-        
-        }
-        let outer = addition();
-        console.log(outer());
-        
-        // 2. Write a recursive function that searches an array for a specific value. The
-        // function should return true if the value is found, and false if it is not. You
-        // can assume that the array is not nested.
-        alert ('QUESTION NO 02')
-        let months = ['january', 'february', 'march', 'april', 'may', 'june', 'july', 'august', 'september', 'october', 'november', 'december'];
-        let userInput =prompt('GIVE A MONTH NAME to check correct spelling');
-        console.log(finder(months,userInput));
-        function finder(months,userInput )
-        {
-            if      (months.length === 0) { return false}
-            else if (months[0] === userInput) { return true}
-            else    { return finder(months.slice(1),userInput)}
-        };
-        
-        //3 Write a function that adds a new paragraph element to the bottom of an
-        // HTML document. The function should take a string argument that will be
-        // used as the text content of the new paragraph element.
-        alert('QUESTION NO 03')
-        function addParagraph(text) {
-          const newParagraph = document.createElement('p');
-          newParagraph.textContent = text;
-          const body = document.querySelector('body');
-          body.append(newParagraph);
-        }
-        
-        // 4. Write a function that adds a new list item to an unordered list in an HTML
-        // document. The function should take a string argument that will be used as
-        // the text content of the new list item.
-        
-        alert('QUESTION NO 04')
-        function addingList() {
-          let newItem = document.getElementById('new');
-          let newlist = document.createElement('li');
-          newlist.textContent = prompt('enter a value to add in list');
-          newItem.appendChild(newlist);
-        }
-        
-        // 5. Write a function that changes the background color of an HTML element.
-        // The function should take two arguments: the first argument is a reference
-        // to the HTML element, and the second argument is a string representing
-        // the new background color.
-        
-        alert('QUESTION NO 05')
-        function func(){
-        let background=document.getElementById('bg');
-        let newColor = ('#' + Math.round(Math.random()*10000))
-        background.style.backgroundColor=newColor;
-        
-        }
-        
-        //6 Write a function that saves an object to localStorage. The function should
-        // take two arguments: the first argument is a string representing the key to
-        // use for storing the object, and the second argument is the object to store.
-        
-        alert('QUESTION NO 06')
-        let obj1 = {
-            name: prompt('enter you name'),
-            fname: prompt('enter your father name ')
-        }
-        let mainName1 = 'example';
-        function storing(Main,obj) {
-            let stringify = JSON.stringify(obj);
-            localStorage.setItem(Main, stringify);
-        }
-        storing(mainName,obj);
-        
-        // 7. Write a function that retrieves an object from localStorage. The function
-        // should take one argument, which is a string representing the key used to
-        // store the object. The function should return the object
-        
-        alert('QUESTION NO 07')
-        let obj2 = {
-            name: prompt('enter you name'),
-            fname: prompt('enter your father name ')
-        }
-        let getting2=localStorage.getItem('example')
-        let mainName2 = getting?JSON.parse(getting):[];
-        function storing(Main,obj) {
-            console.log(obj);
-        }
-        storing(mainName,obj);
-        
-        // 8. Write a function that takes an object and saves each property to
-        // localStorage using the property name as the key and the property value as
-        // the value. The function should also retrieve the object from localStorage
-        // and return it as a new object
-        
-        alert('QUESTION NO 08')
-        let obj = {
-          name: prompt('enter you name'),
-          fname: prompt('enter your father name ')
-        }
-        let getting=localStorage.getItem('example')
-        let mainName = getting?JSON.parse(getting):[];
-        function storing(Main,obj) {
-          let stringify = JSON.stringify(obj);
-          localStorage.setItem(Main, stringify);
-          console.log(obj);
-        }
-        storing(mainName,obj);
-        </script>
+    <hr>
+    <h2> Research</h2>
+    Your content should reflect factual, research-based information. Companies that spread false or misleading
+    information are vulnerable to backlash from both search engines and consumers.
+    <h2>Business Goals</h2>
+    Think about the business goals you want to accomplish, and how you plan to use content to do this.
+    <h4>You should understand:</h4>
+    <ul>
+        <li>What type of content format you need.</li>
+        <li> What style/tone you want your piece written in.</li>
+        <li> What your goals are for each piece.</li>
+    </ul>
+    <h2>Buyer Persona</h2>
+    As our guide to creating a buyer persona notes, a buyer persona is an abstract depiction of your ideal customer.
+    It is founded upon qualitative and quantitative data from market/competitor research and existing customer
+    profiles.
+    <h2>Search Intent</h2>
+    Users often have very different expectations when using search engines, and, in its guidelines, Google talks a
+    lot 
+    about how to understand what users are looking for when using different queries. Providing exhaustive
+    answers to user queries increases the chances of your content being rated as quality.
+    <br>
+    Search intent can be broken down into four distinct types:
+    <br>
+    <ul>
+        <b> Informational</b> – <i>the searcher is looking for specific information on a topic.</i> <br>
+        <b> Navigational</b> – <i>the searcher is looking for a specific web page or site.</i> <br>
+        <b> Commercial</b> – <i>the searcher is considering a purchase and wants to investigate their options.</i> <br>
+        <b> Transactional</b> – <i>the searcher wants to purchase something.</i>
+    </ul>
+    <h2>Keyword Research and SEO</h2>
+    For a business, it’s important to remember that, in today’s digital era, content writing is closely aligned
+    with SEO copywriting. Google and other search engines play a vital role in sending organic traffic to
+    websites, and they value quality content.
+    <h2>Content Strategy</h2>
+    In order to effectively engage with your audience and outperform your competition’s marketing initiatives,
+    it helps to construct a comprehensive content strategy plan. This plan refers to how you intend to manage
+    your marketing content (i.e. where and when you plan to publish). Your content strategy should include:
+    <ul>
+        <li>Your content formats (i.e. social media posts, articles, etc.)</li>
+        <li> The channels you will publish on (i.e. your business website, social media networks, etc.)</li>
+        <li> How you will manage the content (who will do the posting and manage the customer engagements)</li>
+        <li>Content construction (who will actually do the writing? If outsourcing, what firm will you use?)</li>
+        <li>Content performance (who will analyze how your content is performing and report back to you?)
+    </ul>
+    <h2>Topic Research</h2>
+    Take the time to carry out thorough topic research, so that you can come up with strong, strategic ideas
+    for your content that will resonate with your audience and drive results.</p>
 </body>
 
 </html>
